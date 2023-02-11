@@ -1,0 +1,31 @@
+﻿<Window x:Class="ExcelReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelReader"
+        mc:Ignorable="d"
+        Title="ExcelReader" Height="550" Width="800" Background="#00B489">
+    <Window.Resources>
+        <FontFamily x:Key="CustomFontFamily">./fonts/VictorMono-Regular.otf#VictorMono-Regular</FontFamily>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" FontFamily="{StaticResource CustomFontFamily}" FontSize="30" Foreground="#00008B" HorizontalAlignment="Center" Margin="60">👧 Hi! Lets make ease $</TextBlock>
+            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+                <Label Target="{Binding ElementName=BtnOpenFileWord}" FontFamily="{StaticResource CustomFontFamily}" FontSize="30" Foreground="#00008B">select word template -></Label>           
+                <Button x:Name="BtnOpenFileWord" Width="30" Height="30" Background="#00008B" Foreground="White" Click="BtnOpenFileWord_OnClick">💾</Button>
+            </WrapPanel>
+            <TextBlock x:Name="FilePathTextBlockWord" DockPanel.Dock="Top" TextWrapping="Wrap" FontFamily="{StaticResource CustomFontFamily}" FontSize="15" Foreground="#00008B" HorizontalAlignment="Center" >Here is the path to the word template</TextBlock>
+            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+                <Label Target="{Binding ElementName=BtnOpenFile}" FontFamily="{StaticResource CustomFontFamily}" FontSize="30" Foreground="#00008B">select excel -></Label>           
+                <Button x:Name="BtnOpenFile" Width="30" Height="30" Background="#00008B" Foreground="White" Click="BtnFile_OnClick">💾</Button>
+            </WrapPanel>
+            <TextBlock x:Name="FilePathTextBlock" DockPanel.Dock="Top" TextWrapping="Wrap" FontFamily="{StaticResource CustomFontFamily}" FontSize="15" Foreground="#00008B" HorizontalAlignment="Center" >Here is the path to the excel file</TextBlock>
+            <Button x:Name="BtnStart" Width="60" Height="30" Background="#00008B" Foreground="White" VerticalAlignment="Top" Margin="25" Click="BtnStart_OnClick">Start</Button>
+        </DockPanel>
+        <TextBox x:Name="Logger" AcceptsReturn="True" Height="100" VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="40" Width="400">Field to show process</TextBox>
+    </Grid>
+</Window>
+
